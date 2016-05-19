@@ -6,22 +6,29 @@ var resultat = document.getElementById("resultat");
 
 function calculTtc (){
 	
-	if (tva.value !== "") {
+	if (montant.value == "") {
+		resultat.innerHTML ="Indiquez un montant";
+	}else if(tva.value == ""){
+		resultat.innerHTML ="Indiquez un taux de TVA";
+	}else{
 		var montantTtc = Number(montant.value) + (Number(montant.value) * tva.value)/100;
 		resultat.innerHTML ="Résultat TTC :" + " " + montantTtc.toFixed(2);
-	}else{
-		resultat.innerHTML ="Indiquez un montant de TVA";
+		
 	}
 }
 
 
+
+
+
 function calculHt (){
-	var montantHt;
-	if(tva.value !== ""){
-			var montantHt = Number(montant.value)/(1+(tva.value/100));
-			resultat.innerHTML ="Résultat HT :" + " " + montantHt.toFixed(2);
+	if (montant.value == "") {
+		resultat.innerHTML ="Indiquez un montant";
+	}else if(tva.value == ""){
+		resultat.innerHTML ="Indiquez un taux de TVA";
 	}else{
-		resultat.innerHTML ="indiquez un montant de TVA";
+		var montantHt = Number(montant.value)/(1+(tva.value/100));
+		resultat.innerHTML ="Résultat HT :" + " " + montantHt.toFixed(2);
 	}
 	
 }
