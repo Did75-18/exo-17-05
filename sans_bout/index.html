@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>convertisseur TVA</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script
+		src="https://code.jquery.com/jquery-2.2.3.min.js"
+		integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+		crossorigin="anonymous">
+	</script>
+</head>
+<body onLoad="depart()">
+	<div class="container">
+		<div class="row well text-center">
+			<h2>Convertisseur TVA</h2>
+		</div>
+		<div class="row text-center">
+			<div class="col-xs-12 col-sm-12 well">
+				<label>Montant</label> : 
+				<input type="text" name="montant" id="montant" value="100" onKeyUp="taux()"><span> €</span>
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="col-xs-12 col-sm-12 well">
+				<label>TVA </label> : 
+				<input type="text" name="tva" id="tva" value="20" onKeyUp="taux()"><span> %</span>
+			</div>
+		</div>
+		
+		<div  class="row text-center">
+			<div class="col-xs-12 col-sm-12 well">
+				<label>HT ou TTC ?</label> :
+				<select name="param" id="param"  onchange="taux()">
+	        		<option value="ht" >HT</option>
+	        		<option value="ttc">TTC</option>
+	       		</select>
+	       	</div>
+       	</div>
+		<div class="row text-center">
+			<div class="col-xs-12 col-sm-12 well">
+       			<!--<button class="btn btn-warning" id="calculez">Calculez
+       			</button>-->
+       		</div>
+       	</div>
+       	<div class="row text-center" id="resultat">
+       		<div class="col-xs-12 col-sm-12">
+       		</div>
+       	</div>
+		
+	</div>
+<script type="text/javascript" src="calculTva.js"></script>
+</body>
+</html>
